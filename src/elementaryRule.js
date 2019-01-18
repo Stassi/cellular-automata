@@ -3,6 +3,8 @@ import {
   join,
   length,
   map,
+  max,
+  min,
   pipe,
   prepend,
   range,
@@ -11,6 +13,9 @@ import {
   until,
   zipObj,
 } from 'ramda';
+
+const zeroOrHigher = max(0);
+const eightBitsOrLower = min(255);
 
 const toBinary = x => Number(x).toString(2);
 
@@ -44,6 +49,8 @@ const zeroThroughSeven = range(0, 8);
 const mapThreeBitConfigurations = mapZipDescendingThreeBitBinary(zeroThroughSeven);
 
 const elementaryRule = pipe(
+  zeroOrHigher,
+  eightBitsOrLower,
   eightBitBinary,
   mapThreeBitConfigurations,
 );
