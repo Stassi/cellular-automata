@@ -40,7 +40,6 @@ const mapZipDescendingThreeBitBinary = pipe(
   reverse,
   zipObj,
 );
-
 const zeroThroughSeven = range(0, 8);
 const mapElementaryConfigurations = mapZipDescendingThreeBitBinary(zeroThroughSeven);
 
