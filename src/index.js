@@ -1,3 +1,4 @@
-import rules from './rules';
+import elementaryRule from './elementaryRule';
 
-export default rules;
+// eslint-disable-next-line import/prefer-default-export
+export { elementaryRule };

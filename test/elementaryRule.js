@@ -1,7 +1,7 @@
 import { expect } from 'chai';
-import rule from '../src';
+import { elementaryRule as rule } from '../src';
 
-describe('rule', () => {
+describe('elementary rule', () => {
   describe('30', () => {
     it('should include the rules', () => {
       expect(rule(30)).to.include({
