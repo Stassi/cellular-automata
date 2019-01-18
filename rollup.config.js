@@ -18,7 +18,7 @@ export default [
   {
     ...options,
     output: {
-      file: 'lib/cellular-automata.esm.js',
+      file: 'lib/spaceships.esm.js',
       format: 'esm',
       sourcemap: true,
     },
@@ -26,9 +26,9 @@ export default [
   {
     ...options,
     output: {
-      file: 'lib/cellular-automata.umd.js',
+      file: 'lib/spaceships.umd.js',
       format: 'umd',
-      name: 'cellularAutomata',
+      name: 'spaceships',
       sourcemap: true,
     },
   }

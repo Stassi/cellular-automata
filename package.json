@@ -6,9 +6,9 @@
   "files": [
     "/lib"
   ],
-  "main": "./lib/cellular-automata.umd.js",
-  "module": "./lib/cellular-automata.esm.js",
-  "repository": "github:Stassi/cellular-automata",
+  "main": "./lib/spaceships.umd.js",
+  "module": "./lib/spaceships.esm.js",
+  "repository": "github:Stassi/spaceships",
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint src",
