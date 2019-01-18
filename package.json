@@ -1,14 +1,14 @@
 {
   "name": "spaceships",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "author": "Andreas Stassivik <andreas@stassi.net> (https://github.com/Stassi)",
   "files": [
     "/lib"
   ],
-  "main": "./lib/cellular-automata.umd.js",
-  "module": "./lib/cellular-automata.esm.js",
-  "repository": "github:Stassi/cellular-automata",
+  "main": "./lib/spaceships.umd.js",
+  "module": "./lib/spaceships.esm.js",
+  "repository": "github:Stassi/spaceships",
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint src",
