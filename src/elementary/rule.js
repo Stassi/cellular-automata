@@ -48,11 +48,11 @@ const mapZipDescendingThreeBitBinary = pipe(
 const zeroThroughSeven = range(0, 8);
 const mapThreeBitConfigurations = mapZipDescendingThreeBitBinary(zeroThroughSeven);
 
-const elementaryRule = pipe(
+const rule = pipe(
   zeroOrHigher,
   eightBitsOrLower,
   eightBitBinary,
   mapThreeBitConfigurations,
 );
 
-export default elementaryRule;
+export default rule;

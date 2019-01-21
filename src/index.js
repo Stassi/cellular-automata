@@ -1,4 +1,6 @@
-import elementaryRule from './elementaryRule';
+import {
+  rule as elementaryRule,
+  triangle as elementaryTriangle,
+} from './elementary';
 
-// eslint-disable-next-line import/prefer-default-export
-export { elementaryRule };
+export { elementaryRule, elementaryTriangle };
