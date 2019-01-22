@@ -46,6 +46,7 @@ const appendRow = ({
   elementaryRule,
   generated: [
     ...generated,
+    // TODO: R.pick
     row({
       elementaryRule,
       generated,
