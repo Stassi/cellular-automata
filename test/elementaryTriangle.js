@@ -9,9 +9,7 @@ describe('elementary triangle', () => {
       it('should exhibit rule 30 behavior', () => {
         expect(triangle({
           height,
-          outerState: 0,
           rule: 30,
-          seed: [1],
         })).to.have.deep.ordered.members([
           [1],
           [1, 1, 1],
@@ -26,9 +24,7 @@ describe('elementary triangle', () => {
       it('should exhibit rule 90 behavior', () => {
         expect(triangle({
           height,
-          outerState: 0,
           rule: 90,
-          seed: [1],
         })).to.have.deep.ordered.members([
           [1],
           [1, 0, 1],
@@ -43,9 +39,7 @@ describe('elementary triangle', () => {
       it('should exhibit rule 110 behavior', () => {
         expect(triangle({
           height,
-          outerState: 0,
           rule: 110,
-          seed: [1],
         })).to.have.deep.ordered.members([
           [1],
           [1, 1, 0],

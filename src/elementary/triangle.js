@@ -13,6 +13,16 @@ import {
 } from 'ramda';
 import elementaryRule from './rule';
 
+const setDefaults = ({
+  outerState = 0,
+  seed = [1],
+  ...props
+}) => ({
+  ...props,
+  outerState,
+  seed,
+});
+
 const toElementaryRule = ({ rule, ...props }) => ({
   ...props,
   elementaryRule: elementaryRule(rule),
@@ -129,6 +139,7 @@ const appendRowsUntilGeneratedLengthEqualsHeight = until(
 );
 
 const triangle = pipe(
+  setDefaults,
   toElementaryRule,
   initializeGenerated,
   appendRowsUntilGeneratedLengthEqualsHeight,
