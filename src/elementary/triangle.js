@@ -23,23 +23,42 @@ const generatedLengthEqualsHeight = ({ generated, height }) => equals(
   length(generated),
 );
 
-const toLastRow = ({ generated, ...props }) => ({
+const toPreviousRow = ({ generated, ...props }) => ({
   ...props,
-  lastRow: last(generated),
+  previousRow: last(generated),
 });
 
+const toPreviousRowWithOuterStates = ({
+  outerState,
+  previousRow,
+  ...props
+}) => ({
+  ...props,
+  previousRowWithOuterStates: [
+    outerState,
+    outerState,
+    ...previousRow,
+    outerState,
+    outerState,
+  ],
+});
+
+// TODO: Implement
+const debug = ({ ...props }) => {
+  const res = { ...props };
+  return res;
+};
+
 const row = pipe(
-  toLastRow,
-  ({ lastRow, ...props }) => {
-    // TODO: Implement
-    const res = ['debug'];
-    return res;
-  },
+  toPreviousRow,
+  toPreviousRowWithOuterStates,
+  debug,
 );
 
 const appendRow = ({
   elementaryRule,
   generated,
+  outerState,
   ...props
 }) => ({
   ...props,
@@ -50,6 +69,7 @@ const appendRow = ({
     row({
       elementaryRule,
       generated,
+      outerState,
     }),
   ],
 });
