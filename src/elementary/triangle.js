@@ -1,9 +1,14 @@
 import {
   equals,
+  gt,
+  join,
   last,
   length,
+  map,
   pipe,
   prop,
+  slice,
+  tail,
   until,
 } from 'ramda';
 import elementaryRule from './rule';
@@ -43,16 +48,60 @@ const toPreviousRowWithOuterStates = ({
   ],
 });
 
-// TODO: Implement
-const debug = ({ ...props }) => {
-  const res = { ...props };
-  return res;
-};
+const appendNeighborhood = ({
+  previousRowWithOuterStates,
+  neighborhoods = [],
+  ...props
+}) => ({
+  ...props,
+  previousRowWithOuterStates,
+  neighborhoods: [
+    ...neighborhoods,
+    slice(
+      0,
+      3,
+      previousRowWithOuterStates,
+    ),
+  ],
+});
+
+const removePreviousRowHead = ({ previousRowWithOuterStates, ...props }) => ({
+  ...props,
+  previousRowWithOuterStates: tail(previousRowWithOuterStates),
+});
+
+const toNeighborhoods = until(
+  ({ previousRowWithOuterStates }) => gt(
+    3,
+    length(previousRowWithOuterStates),
+  ),
+  pipe(
+    appendNeighborhood,
+    removePreviousRowHead,
+  ),
+);
+
+const toRow = ({
+  neighborhoods,
+  elementaryRule: rule,
+  ...props
+}) => ({
+  ...props,
+  row: map(
+    pipe(
+      join(''),
+      x => rule[x],
+    ),
+    neighborhoods,
+  ),
+});
 
 const row = pipe(
   toPreviousRow,
   toPreviousRowWithOuterStates,
-  debug,
+  toNeighborhoods,
+  toRow,
+  prop('row'),
 );
 
 const appendRow = ({
@@ -63,6 +112,7 @@ const appendRow = ({
 }) => ({
   ...props,
   elementaryRule,
+  outerState,
   generated: [
     ...generated,
     // TODO: R.pick
