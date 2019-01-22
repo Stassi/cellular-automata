@@ -115,7 +115,6 @@ const appendRow = ({
   outerState,
   generated: [
     ...generated,
-    // TODO: R.pick
     row({
       elementaryRule,
       generated,
