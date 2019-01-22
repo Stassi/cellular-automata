@@ -5,7 +5,7 @@ describe('elementary triangle', () => {
   describe('rule: 30', () => {
     describe('height: 3', () => {
       // TODO: Rename
-      it('should return 3 iterations of the expected pattern', () => {
+      it('should return 3 rows', () => {
         expect(triangle({
           height: 3,
           outerState: 0,
