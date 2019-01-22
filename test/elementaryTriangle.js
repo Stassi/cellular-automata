@@ -3,10 +3,10 @@ import { elementaryTriangle as triangle } from '../src';
 
 describe('elementary triangle', () => {
   describe('rule: 30', () => {
-    describe('height: 3', () => {
-      it('should return 3 rows', () => {
+    describe('height: 5', () => {
+      it('should exhibit rule 30 behavior', () => {
         expect(triangle({
-          height: 3,
+          height: 5,
           outerState: 0,
           rule: 30,
           seed: [1],
@@ -14,6 +14,8 @@ describe('elementary triangle', () => {
           [1],
           [1, 1, 1],
           [1, 1, 0, 0, 1],
+          [1, 1, 0, 1, 1, 1, 1],
+          [1, 1, 0, 0, 1, 0, 0, 0, 1],
         ]);
       });
     });
