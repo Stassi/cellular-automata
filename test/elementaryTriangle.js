@@ -22,6 +22,23 @@ describe('elementary triangle', () => {
       });
     });
 
+    describe('rule: 90', () => {
+      it('should exhibit rule 90 behavior', () => {
+        expect(triangle({
+          height,
+          outerState: 0,
+          rule: 90,
+          seed: [1],
+        })).to.have.deep.ordered.members([
+          [1],
+          [1, 0, 1],
+          [1, 0, 0, 0, 1],
+          [1, 0, 1, 0, 1, 0, 1],
+          [1, 0, 0, 0, 0, 0, 0, 0, 1],
+        ]);
+      });
+    });
+
     describe('rule: 110', () => {
       it('should exhibit rule 110 behavior', () => {
         expect(triangle({
