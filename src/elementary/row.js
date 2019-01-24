@@ -1,9 +1,7 @@
 import {
   gt,
-  join,
   last,
   length,
-  map,
   pipe,
   prop,
   slice,
@@ -66,17 +64,11 @@ const toNeighborhoods = until(
 
 const toRow = ({
   neighborhoods,
-  elementaryRule: rule,
+  neighborhoodsToRow,
   ...props
 }) => ({
   ...props,
-  row: map(
-    pipe(
-      join(''),
-      x => rule[x],
-    ),
-    neighborhoods,
-  ),
+  row: neighborhoodsToRow(neighborhoods),
 });
 
 const row = pipe(
