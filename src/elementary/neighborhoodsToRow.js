@@ -3,14 +3,14 @@ import {
   map,
   pipe,
 } from 'ramda';
-import elementaryRule from './rule';
+import ruleConfiguration from './ruleConfiguration';
 
 const neighborhoodsToRow = pipe(
-  elementaryRule,
-  ruleConfiguration => map(
+  ruleConfiguration,
+  configuration => map(
     pipe(
       join(''),
-      neighborhood => ruleConfiguration[neighborhood],
+      neighborhood => configuration[neighborhood],
     ),
   ),
 );

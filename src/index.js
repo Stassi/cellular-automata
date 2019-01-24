@@ -1,5 +1,5 @@
 import {
-  rule as elementaryRule,
+  ruleConfiguration as elementaryRule,
   triangle as elementaryTriangle,
 } from './elementary';
 

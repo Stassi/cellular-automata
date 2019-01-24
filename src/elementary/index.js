@@ -1,4 +1,4 @@
-import rule from './rule';
+import ruleConfiguration from './ruleConfiguration';
 import triangle from './triangle';
 
-export { rule, triangle };
+export { ruleConfiguration, triangle };
