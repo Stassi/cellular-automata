@@ -29,6 +29,7 @@ const toPreviousRowWithOuterStates = ({
   ],
 });
 
+// TODO: replace previousRowWithOuterStates with slice addition counter
 const appendNeighborhood = ({
   previousRowWithOuterStates,
   neighborhoods = [],
