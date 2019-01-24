@@ -1,6 +1,11 @@
 import {
+  rectangle as elementaryRectangle,
   ruleConfiguration as elementaryRule,
   triangle as elementaryTriangle,
 } from './elementary';
 
-export { elementaryRule, elementaryTriangle };
+export {
+  elementaryRectangle,
+  elementaryRule,
+  elementaryTriangle,
+};
