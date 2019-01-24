@@ -8,14 +8,9 @@ import {
 import neighborhoodsToRow from './neighborhoodsToRow';
 import row from './row';
 
-const setDefaults = ({
-  outerState = 0,
-  seed = [1],
-  ...props
-}) => ({
+const setDefaultOuterState = ({ outerState = 0, ...props }) => ({
   ...props,
   outerState,
-  seed,
 });
 
 const initializeGenerated = ({ seed, ...props }) => ({
@@ -57,12 +52,12 @@ const appendRowsUntilGeneratedLengthEqualsHeight = until(
   appendRow,
 );
 
-const triangle = pipe(
-  setDefaults,
+const polygon = pipe(
+  setDefaultOuterState,
   initializeGenerated,
   toNeighborhoodsToRow,
   appendRowsUntilGeneratedLengthEqualsHeight,
   prop('generated'),
 );
 
-export default triangle;
+export default polygon;

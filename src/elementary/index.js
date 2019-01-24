@@ -1,6 +1,5 @@
-import rectangle from './rectangle';
+import { rectangle, triangle } from './polygons';
 import ruleConfiguration from './ruleConfiguration';
-import triangle from './triangle';
 
 export {
   rectangle,
