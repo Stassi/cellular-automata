@@ -57,4 +57,9 @@ describe('elementary rectangle', () => {
       });
     });
   });
+
+  describe('stochastic', () => {
+    // TODO: Implement
+    it('needs tests');
+  })
 });
