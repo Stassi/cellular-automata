@@ -32,17 +32,20 @@ const appendRow = ({
   generated,
   neighborhoodsToRow,
   outerState,
+  vertices,
   ...props
 }) => ({
   ...props,
   neighborhoodsToRow,
   outerState,
+  vertices,
   generated: [
     ...generated,
     row({
       generated,
       neighborhoodsToRow,
       outerState,
+      vertices,
     }),
   ],
 });

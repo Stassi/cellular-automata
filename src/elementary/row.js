@@ -17,10 +17,15 @@ const toPreviousRow = ({ generated, ...props }) => ({
 const toPreviousRowWithOuterStates = ({
   outerState,
   previousRow,
+  vertices,
   ...props
 }) => ({
   ...props,
-  previousRowWithOuterStates: [
+  previousRowWithOuterStates: vertices === 4 ? [
+    outerState,
+    ...previousRow,
+    outerState,
+  ] : [
     outerState,
     outerState,
     ...previousRow,
