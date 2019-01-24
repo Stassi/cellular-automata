@@ -3,7 +3,7 @@ import { elementaryRule as rule } from '../src';
 
 describe('elementary rule', () => {
   describe('-10', () => {
-    it('should include the valid, next-highest rule (0)', () => {
+    it('should include the valid, next-highest rule configuration (0)', () => {
       expect(rule(-10)).to.include({
         '000': 0,
         '001': 0,
@@ -18,7 +18,7 @@ describe('elementary rule', () => {
   });
 
   describe('30', () => {
-    it('should include the rules', () => {
+    it('should include the rule configuration', () => {
       expect(rule(30)).to.include({
         '000': 0,
         '001': 1,
@@ -33,7 +33,7 @@ describe('elementary rule', () => {
   });
 
   describe('110', () => {
-    it('should include the rules', () => {
+    it('should include the rule configuration', () => {
       expect(rule(110)).to.include({
         '000': 0,
         '001': 1,
@@ -48,7 +48,7 @@ describe('elementary rule', () => {
   });
 
   describe('300', () => {
-    it('should include the valid, next-lowest rule (255)', () => {
+    it('should include the valid, next-lowest rule configuration (255)', () => {
       expect(rule(300)).to.include({
         '000': 1,
         '001': 1,
