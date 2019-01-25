@@ -2,8 +2,8 @@ import { expect } from 'chai';
 import { elementaryTriangle as triangle } from '../src';
 
 describe('elementary triangle', () => {
-  describe('height: 5', () => {
-    const height = 5;
+  describe('height: 4', () => {
+    const height = 4;
 
     describe('rule: 30', () => {
       it('should exhibit rule 30 behavior', () => {
@@ -15,7 +15,6 @@ describe('elementary triangle', () => {
           [1, 1, 1],
           [1, 1, 0, 0, 1],
           [1, 1, 0, 1, 1, 1, 1],
-          [1, 1, 0, 0, 1, 0, 0, 0, 1],
         ]);
       });
     });
@@ -30,7 +29,6 @@ describe('elementary triangle', () => {
           [1, 0, 1],
           [1, 0, 0, 0, 1],
           [1, 0, 1, 0, 1, 0, 1],
-          [1, 0, 0, 0, 0, 0, 0, 0, 1],
         ]);
       });
     });
@@ -45,7 +43,6 @@ describe('elementary triangle', () => {
           [1, 1, 0],
           [1, 1, 1, 0, 0],
           [1, 1, 0, 1, 0, 0, 0],
-          [1, 1, 1, 1, 1, 0, 0, 0, 0],
         ]);
       });
     });
