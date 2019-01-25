@@ -56,8 +56,7 @@ const appendRowsUntilGeneratedLengthEqualsHeight = until(
 );
 
 // TODO: Implement base-10 formatting
-// TODO: Implement bottom-up orientation
-// TODO: Implement left-right mirroring
+// TODO: Implement horizontal and vertical mirroring
 const polygon = pipe(
   setDefaultOuterState,
   initializeGenerated,
