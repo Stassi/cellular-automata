@@ -6,6 +6,7 @@ describe('elementary rectangle', () => {
     const seed = [1, 0, 0, 1, 0, 0, 1, 0];
 
     describe('height: 5', () => {
+      // TODO: Reduce value to 4 for consistency
       const height = 5;
 
       describe('rule: 30', () => {
@@ -56,10 +57,28 @@ describe('elementary rectangle', () => {
         });
       });
     });
+
+    describe('square', () => {
+      const height = undefined;
+      it('needs tests');
+    });
   });
 
   describe('stochastic', () => {
-    // TODO: Implement
-    it('needs tests');
+    const seed = undefined;
+
+    describe('width: 8', () => {
+      const width = 8;
+
+      describe('height: 4', () => {
+        const height = 4;
+        it('needs tests');
+      });
+
+      describe('square', () => {
+        const height = undefined;
+        it('needs tests');
+      });
+    });
   })
 });
