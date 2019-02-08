@@ -3,8 +3,20 @@ import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 
-// rollup-plugin-terser does not support multiple outputs
-const options = {
+const rollupConfig = [
+  {
+    file: 'lib/spaceships.esm.js',
+    format: 'esm',
+    sourcemap: true,
+  },
+  {
+    file: 'lib/spaceships.umd.js',
+    format: 'umd',
+    name: 'spaceships',
+    sourcemap: true,
+  },
+].map(output => ({
+  output,
   input: 'src/index.js',
   plugins: [
     resolve(),
@@ -12,24 +24,6 @@ const options = {
     babel({ exclude: 'node_modules/**' }),
     terser(),
   ],
-};
+}));
 
-export default [
-  {
-    ...options,
-    output: {
-      file: 'lib/spaceships.esm.js',
-      format: 'esm',
-      sourcemap: true,
-    },
-  },
-  {
-    ...options,
-    output: {
-      file: 'lib/spaceships.umd.js',
-      format: 'umd',
-      name: 'spaceships',
-      sourcemap: true,
-    },
-  }
-];
+export default rollupConfig;
