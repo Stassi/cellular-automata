@@ -1,4 +1,5 @@
 # spaceships
+[![build status][shields travis]][travis spaceships]
 [![npm dependencies][shields dependencies]][spaceships package]
 [![npm dev dependencies][shields dev dependencies]][spaceships package]
 [![license][shields license]][spaceships license]
@@ -22,9 +23,12 @@ Generate rule table for the [elementary cellular automaton][wikipedia elementary
 [shields minzip]: https://img.shields.io/bundlephobia/minzip/spaceships.svg
 [shields node]: https://img.shields.io/node/v/spaceships.svg
 [shields npm]: https://img.shields.io/npm/v/spaceships.svg
+[shields travis]: https://img.shields.io/travis/com/Stassi/spaceships.svg
 [spaceships license]: LICENSE
     (spaceships license)
 [spaceships package]: package.json
     (spaceships package.json)
+[travis spaceships]: https://travis-ci.com/Stassi/spaceships
+    (travis: spaceships)
 [wikipedia elementary cellular automaton]: https://en.wikipedia.org/wiki/Elementary_cellular_automaton
     (Wikipedia: Elementary cellular automaton)
