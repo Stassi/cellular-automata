@@ -2,20 +2,37 @@ import { expect } from 'chai';
 import { elementaryRectangle as rectangle } from '../src';
 
 describe('elementary rectangle', () => {
-  describe('deterministic', () => {
-    const seed = [1, 0, 0, 1, 0, 0, 1, 0];
+  const startRow = [1, 0, 0, 1, 0, 0, 1, 0];
+
+  describe('rule: 30', () => {
+    const rule = 30;
+
+    describe('square', () => {
+      it('should exhibit rule 30 behavior', () => {
+        // TODO: Re-enable
+        // const debug = rectangle({ rule, startRow });
+        const debug = null;
+
+        expect(debug).to.have.deep.ordered.members([
+          [null, 0, 0, 1, 0, 0, 1, 0],
+          [1, 1, 1, 1, 1, 1, 1, 1],
+          [1, 0, 0, 0, 0, 0, 0, 0],
+          [1, 1, 0, 0, 0, 0, 0, 0],
+        ]);
+      });
+    });
 
     describe('height: 4', () => {
       const height = 4;
 
-      describe('rule: 30', () => {
+      describe('start row provided', () => {
         it('should exhibit rule 30 behavior', () => {
           expect(rectangle({
             height,
-            seed,
-            rule: 30,
+            rule,
+            startRow,
           })).to.have.deep.ordered.members([
-            [1, 0, 0, 1, 0, 0, 1, 0],
+            [null, 0, 0, 1, 0, 0, 1, 0],
             [1, 1, 1, 1, 1, 1, 1, 1],
             [1, 0, 0, 0, 0, 0, 0, 0],
             [1, 1, 0, 0, 0, 0, 0, 0],
@@ -23,58 +40,31 @@ describe('elementary rectangle', () => {
         });
       });
 
-      describe('rule: 90', () => {
-        it('should exhibit rule 90 behavior', () => {
+      describe('seeded', () => {
+        it('should exhibit deterministic rule 30 behavior', () => {
           expect(rectangle({
             height,
-            seed,
-            rule: 90,
+            rule,
+            seed: 'hello.',
           })).to.have.deep.ordered.members([
-            [1, 0, 0, 1, 0, 0, 1, 0],
-            [0, 1, 1, 0, 1, 1, 0, 1],
-            [1, 1, 1, 0, 1, 1, 0, 0],
-            [1, 0, 1, 0, 1, 1, 1, 0],
+            [null, 0, 0, 1, 0, 0, 1, 0],
+            [1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0],
+            [1, 1, 0, 0, 0, 0, 0, 0],
           ]);
         });
       });
 
-      describe('rule: 110', () => {
-        it('should exhibit rule 110 behavior', () => {
-          expect(rectangle({
-            height,
-            seed,
-            rule: 110,
-          })).to.have.deep.ordered.members([
-            [1, 0, 0, 1, 0, 0, 1, 0],
-            [1, 0, 1, 1, 0, 1, 1, 0],
-            [1, 1, 1, 1, 1, 1, 1, 0],
-            [1, 0, 0, 0, 0, 0, 1, 0],
+      describe('unseeded', () => {
+        it('should exhibit stochastic rule 30 behavior', () => {
+          expect(rectangle({ height, rule })).to.have.deep.ordered.members([
+            [null, 0, 0, 1, 0, 0, 1, 0],
+            [1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0],
+            [1, 1, 0, 0, 0, 0, 0, 0],
           ]);
         });
       });
-    });
-
-    describe('square', () => {
-      const height = undefined;
-      it('needs tests');
     });
   });
-
-  describe('stochastic', () => {
-    const seed = undefined;
-
-    describe('width: 8', () => {
-      const width = 8;
-
-      describe('height: 4', () => {
-        const height = 4;
-        it('needs tests');
-      });
-
-      describe('square', () => {
-        const height = undefined;
-        it('needs tests');
-      });
-    });
-  })
 });
