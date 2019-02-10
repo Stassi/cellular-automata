@@ -1,7 +1,6 @@
 import polygon from './polygon';
 
 const rectangle = ({
-  // TODO: Implement default stochastic seed
   seed = [1, 0, 1],
   ...props,
 }) => polygon({
@@ -11,7 +10,6 @@ const rectangle = ({
 });
 
 const triangle = ({
-  // TODO: Implement width parameter
   seed = [1],
   ...props,
 }) => polygon({
