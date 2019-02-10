@@ -10,10 +10,14 @@ describe('elementary rectangle', () => {
     describe('square', () => {
       it('should exhibit rule 30 behavior', () => {
         expect(rectangle({ rule, startRow })).to.have.deep.ordered.members([
-          [null, 0, 0, 1, 0, 0, 1, 0],
+          [1, 0, 0, 1, 0, 0, 1, 0],
           [1, 1, 1, 1, 1, 1, 1, 1],
           [1, 0, 0, 0, 0, 0, 0, 0],
           [1, 1, 0, 0, 0, 0, 0, 0],
+          [1, 0, 1, 0, 0, 0, 0, 0],
+          [1, 0, 1, 1, 0, 0, 0, 0],
+          [1, 0, 1, 0, 1, 0, 0, 0],
+          [1, 0, 1, 0, 1, 1, 0, 0],
         ]);
       });
     });

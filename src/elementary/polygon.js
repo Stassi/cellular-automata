@@ -23,9 +23,9 @@ const setDefaultHeightToStartRowHeight = ({
   height: height || length(startRow),
 });
 
-const initializeGenerated = ({ seed, ...props }) => ({
+const initializeGeneratedFromStartRow = ({ startRow, ...props }) => ({
   ...props,
-  generated: [[...seed]],
+  generated: [[...startRow]],
 });
 
 const toNeighborhoodsToRow = ({ rule, ...props }) => ({
@@ -70,7 +70,7 @@ const appendRowsUntilGeneratedLengthEqualsHeight = until(
 const polygon = pipe(
   setDefaultOuterState,
   setDefaultHeightToStartRowHeight,
-  initializeGenerated,
+  initializeGeneratedFromStartRow,
   toNeighborhoodsToRow,
   appendRowsUntilGeneratedLengthEqualsHeight,
   prop('generated'),
