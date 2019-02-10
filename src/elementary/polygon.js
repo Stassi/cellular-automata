@@ -13,7 +13,7 @@ const setDefaultOuterState = ({ outerState = 0, ...props }) => ({
   outerState,
 });
 
-const setDefaultHeightToStartRowHeight = ({
+const setDefaultHeightFromStartRowLength = ({
   height,
   startRow,
   ...props
@@ -22,6 +22,46 @@ const setDefaultHeightToStartRowHeight = ({
   startRow,
   height: height || length(startRow),
 });
+
+const setDefaultWidthFromHeight = ({
+  height,
+  width,
+  ...props
+}) => ({
+  ...props,
+  height,
+  width: width || height,
+});
+
+// TODO: Implement
+const debugTwo = ({
+  seed,
+  width,
+}) => {
+  const res = {
+    seed,
+    width,
+  };
+  // TODO: Sample { seed, collection: [0, 1], count: width }
+  return res;
+};
+
+// TODO: Implement
+const debug = ({
+  seed,
+  startRow,
+  width,
+  ...props
+}) => {
+  const res = {
+    ...props,
+    startRow: startRow || debugTwo({
+      seed,
+      width,
+    }),
+  };
+  return res;
+};
 
 const initializeGeneratedFromStartRow = ({ startRow, ...props }) => ({
   ...props,
@@ -69,7 +109,9 @@ const appendRowsUntilGeneratedLengthEqualsHeight = until(
 // TODO: Implement horizontal and vertical mirroring
 const polygon = pipe(
   setDefaultOuterState,
-  setDefaultHeightToStartRowHeight,
+  setDefaultHeightFromStartRowLength,
+  setDefaultWidthFromHeight,
+  debug,
   initializeGeneratedFromStartRow,
   toNeighborhoodsToRow,
   appendRowsUntilGeneratedLengthEqualsHeight,
