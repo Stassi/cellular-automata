@@ -32,7 +32,7 @@ describe('elementary rectangle', () => {
             rule,
             startRow,
           })).to.have.deep.ordered.members([
-            [null, 0, 0, 1, 0, 0, 1, 0],
+            [1, 0, 0, 1, 0, 0, 1, 0],
             [1, 1, 1, 1, 1, 1, 1, 1],
             [1, 0, 0, 0, 0, 0, 0, 0],
             [1, 1, 0, 0, 0, 0, 0, 0],
