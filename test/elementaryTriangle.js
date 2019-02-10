@@ -6,11 +6,38 @@ describe('elementary triangle', () => {
     const height = 4;
 
     describe('seeded', () => {
-      it('needs tests');
+      const seed = 'hello.';
+
+      describe('rule: 195', () => {
+        it('should exhibit deterministic rule 195 behavior', () => {
+          expect(triangle({
+            height,
+            seed,
+            rule: 195,
+          })).to.have.deep.ordered.members([
+            [null],
+            [1, 1, 1],
+            [1, 0, 1, 1, 0],
+            [1, 0, 0, 0, 1, 0, 1],
+          ]);
+        });
+      });
     });
 
     describe('unseeded', () => {
-      it('needs tests');
+      describe('rule: 195', () => {
+        it('should exhibit stochastic rule 195 behavior', () => {
+          expect(triangle({
+            height,
+            rule: 195,
+          })).to.have.deep.ordered.members([
+            [null],
+            [1, 1, 1],
+            [1, 0, 1, 1, 0],
+            [1, 0, 0, 0, 1, 0, 1],
+          ]);
+        });
+      });
     });
 
     describe('startRow: 0', () => {
