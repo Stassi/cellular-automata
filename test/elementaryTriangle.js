@@ -41,7 +41,7 @@ describe('elementary triangle', () => {
     });
 
     describe('startRow: 0', () => {
-      const startRow = 0;
+      const startRow = [0];
 
       describe('rule: 195', () => {
         it('should exhibit rule 195 behavior', () => {
@@ -105,7 +105,7 @@ describe('elementary triangle', () => {
       });
 
       describe('explicit parameter', () => {
-        const startRow = 1;
+        const startRow = [1];
 
         describe('rule: 90', () => {
           it('should exhibit rule 90 behavior', () => {
