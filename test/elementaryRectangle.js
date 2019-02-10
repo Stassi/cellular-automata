@@ -9,7 +9,7 @@ describe('elementary rectangle', () => {
 
     describe('square', () => {
       it('should exhibit rule 30 behavior', () => {
-        // TODO: Re-enable
+        // TODO: Re-enable (missing height param broke test framework)
         // const debug = rectangle({ rule, startRow });
         const debug = null;
 
