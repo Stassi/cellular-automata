@@ -5,8 +5,9 @@ const rectangle = ({ ...props }) => polygon({
   vertices: 4,
 });
 
-const triangle = ({ ...props }) => polygon({
+const triangle = ({ startRow = [1], ...props }) => polygon({
   ...props,
+  startRow,
   vertices: 3,
 });
 
