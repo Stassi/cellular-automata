@@ -13,6 +13,16 @@ const setDefaultOuterState = ({ outerState = 0, ...props }) => ({
   outerState,
 });
 
+const setDefaultHeightToStartRowHeight = ({
+  height,
+  startRow,
+  ...props
+}) => ({
+  ...props,
+  startRow,
+  height: height || length(startRow),
+});
+
 const initializeGenerated = ({ seed, ...props }) => ({
   ...props,
   generated: [[...seed]],
@@ -59,6 +69,7 @@ const appendRowsUntilGeneratedLengthEqualsHeight = until(
 // TODO: Implement horizontal and vertical mirroring
 const polygon = pipe(
   setDefaultOuterState,
+  setDefaultHeightToStartRowHeight,
   initializeGenerated,
   toNeighborhoodsToRow,
   appendRowsUntilGeneratedLengthEqualsHeight,

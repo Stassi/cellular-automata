@@ -9,11 +9,7 @@ describe('elementary rectangle', () => {
 
     describe('square', () => {
       it('should exhibit rule 30 behavior', () => {
-        // TODO: Re-enable (missing height param broke test framework)
-        // const debug = rectangle({ rule, startRow });
-        const debug = null;
-
-        expect(debug).to.have.deep.ordered.members([
+        expect(rectangle({ rule, startRow })).to.have.deep.ordered.members([
           [null, 0, 0, 1, 0, 0, 1, 0],
           [1, 1, 1, 1, 1, 1, 1, 1],
           [1, 0, 0, 0, 0, 0, 0, 0],
