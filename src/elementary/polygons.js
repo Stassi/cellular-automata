@@ -1,15 +1,11 @@
 import polygon from './polygon';
 
-const rectangle = ({
-  ...props,
-}) => polygon({
+const rectangle = ({ ...props }) => polygon({
   ...props,
   vertices: 4,
 });
 
-const triangle = ({
-  ...props,
-}) => polygon({
+const triangle = ({ ...props }) => polygon({
   ...props,
   vertices: 3,
 });
